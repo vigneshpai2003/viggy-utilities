@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: viggy-utilities
+Version: 1
+Summary: UNKNOWN
+Home-page: https://github.com/vigneshpai2003/viggy-utilities
+Author: Vignesh M Pai
+Author-email: vigneshpai2003@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Utilities
+
+Provides basic utilities such as timing of functions 
+with negligible overhead and simple usage
+
+1. Installation
+
+`> git clone https://github.com/vigneshpai2003/viggy-utilities.git`
+
+`> cd viggy-utilities`
+
+`> pip install .`
+
+2. Import
+
+`from viggy_utilities import Timer`
+
+3. Usage
+
+```
+class MyClass:
+    ...
+    
+    @Timer()
+    def MyFunction(self, *args, **kwargs):
+        <code>
+        return stuff
+
+
+@Timer()
+def MyOtherFunction(*args, **kwargs):
+    <code>
+    return stuff
+```
+
+Call your functions, write your code as you normally do
+```
+Obj1 = MyClass(...)
+Obj2 = MyClass(...)
+
+
+Obj1.MyFunction(...)
+Obj2.MyFunction(...)
+
+MyOtherFunction(...)
+```
+
+Print or get statistics regarding function execution
+```
+print(*Timer.logSpeed(MyClass.MyFunction, MyOtherFunction), sep="\n")
+```
+
+
